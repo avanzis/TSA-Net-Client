@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using StructureMap;
 using TSA_Net_Client.Providers;
 using TSA_Net_Client.Providers.Tractis;
 using TSA_Net_Client.Services;
@@ -7,7 +6,7 @@ using TSA_Net_Client.Services;
 namespace Tests.Integration
 {
     [TestFixture]
-    public class TimeStampServiceIntegrationTests : BaseTests
+    public class TimeStampServiceIntegrationTests
     {
         private ITimeStampProviderClient _timeStampProviderClient;
         private TimeStampService _timeStampService;
@@ -17,8 +16,7 @@ namespace Tests.Integration
         [SetUp]
         public void SetUp()
         {
-            ObjectFactory.Configure(c => c.For<ITimeStampProviderClient>().Use<TractisDssClient>());
-            _timeStampProviderClient = ObjectFactory.GetInstance<ITimeStampProviderClient>();
+            _timeStampProviderClient = new TractisDssClient();
             _timeStampService = new TimeStampService(_timeStampProviderClient);
             _content = "anything";
             _timestampSignature = "incorrect signature";

@@ -31,48 +31,42 @@ namespace Tests.Providers.Tractis
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void GenerateTimeStamp_Null_Content_Throws_Exception()
         {
-            _client.GenerateTimeStamp(null);
+            Assert.Throws<ArgumentNullException>(() => _client.GenerateTimeStamp(null));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void GenerateTimeStamp_Empty_Content_Throws_Exception()
         {
-            _client.GenerateTimeStamp(string.Empty);
+            Assert.Throws<ArgumentNullException>(() => _client.GenerateTimeStamp(string.Empty));
         }
 
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void VerifyTimeStamp_Null_Content_Throws_Exception()
         {
-            _client.VerifyTimeStamp(null, "signature");
+            Assert.Throws<ArgumentNullException>(() => _client.VerifyTimeStamp(null, "signature"));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void VerifyTimeStamp_Empty_Content_Throws_Exception()
         {
-            _client.VerifyTimeStamp(string.Empty,"signature");
+            Assert.Throws<ArgumentNullException>(() => _client.VerifyTimeStamp(string.Empty, "signature"));
         }
 
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void VerifyTimeStamp_Null_Signature_Throws_Exception()
         {
-            _client.VerifyTimeStamp("content",null);
+            Assert.Throws<ArgumentNullException>(() => _client.VerifyTimeStamp("content", null));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void VerifyTimeStamp_Empty_Signature_Throws_Exception()
         {
-            _client.VerifyTimeStamp("content",string.Empty);
+            Assert.Throws<ArgumentNullException>(() => _client.VerifyTimeStamp("content", string.Empty));
         }
-        
+
     }
 }

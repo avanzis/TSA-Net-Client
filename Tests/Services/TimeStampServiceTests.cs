@@ -8,7 +8,7 @@ using TSA_Net_Client.Services;
 namespace Tests.Services
 {
     [TestFixture]
-    public class TimeStampServiceTests : BaseTests
+    public class TimeStampServiceTests
     {
         private ITimeStampProviderClient _timeStampProviderClient;
         private TimeStampService _timeStampService;
@@ -18,7 +18,7 @@ namespace Tests.Services
         [SetUp]
         public void SetUp()
         {
-            _timeStampProviderClient = InitializeAndInject<ITimeStampProviderClient>();
+            _timeStampProviderClient = MockRepository.GenerateStub<ITimeStampProviderClient>();
             _timeStampProviderClient.Stub(s => s.GenerateTimeStamp(Arg<string>.Is.Anything))
                 .Return(new TimeStampProviderApiResult())
                 .WhenCalled(a=>
@@ -49,17 +49,15 @@ namespace Tests.Services
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void TimeStampService_GenerateTimeStamp_Null_Content_Throws_Exception()
         {
-            _timeStampService.GenerateTimeStamp(null);
+            Assert.Throws<ArgumentNullException>(() => _timeStampService.GenerateTimeStamp(null));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void TimeStampService_GenerateTimeStamp_Empty_Content_Throws_Exception()
         {
-            _timeStampService.GenerateTimeStamp(string.Empty);
+            Assert.Throws<ArgumentNullException>(() => _timeStampService.GenerateTimeStamp(string.Empty));
         }
 
         [Test]
@@ -74,31 +72,27 @@ namespace Tests.Services
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void TimeStampService_VerifyTimeStamp_Null_Content_Throws_Exception()
         {
-            _timeStampService.VerifyTimeStamp(null, _signature);
+            Assert.Throws<ArgumentNullException>(() => _timeStampService.VerifyTimeStamp(null, _signature));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void TimeStampService_VerifyTimeStamp_Empty_Content_Throws_Exception()
         {
-            _timeStampService.VerifyTimeStamp(string.Empty, _signature);
+            Assert.Throws<ArgumentNullException>(() => _timeStampService.VerifyTimeStamp(string.Empty, _signature));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void TimeStampService_VerifyTimeStamp_Empty_Signature_Throws_Exception()
         {
-            _timeStampService.VerifyTimeStamp(_content, string.Empty);
+            Assert.Throws<ArgumentNullException>(() => _timeStampService.VerifyTimeStamp(_content, string.Empty));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void TimeStampService_VerifyTimeStamp_Null_Signature_Throws_Exception()
         {
-            _timeStampService.VerifyTimeStamp(_content, null);
+            Assert.Throws<ArgumentNullException>(() => _timeStampService.VerifyTimeStamp(_content, null));
         }
 
         [Test]

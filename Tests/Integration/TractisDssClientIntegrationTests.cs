@@ -4,7 +4,7 @@ using TSA_Net_Client.Providers.Tractis;
 namespace Tests.Integration
 {
     [TestFixture]
-    public class TractisDssClientIntegrationTests : BaseTests
+    public class TractisDssClientIntegrationTests
     {
         private TractisDssClient _client;
         private string _contentToTest;
@@ -29,13 +29,13 @@ namespace Tests.Integration
             Assert.That(result.TimeStampDateTime.HasValue, Is.True);
             Assert.That(result.TimeStampExpirationDateTime.HasValue, Is.True);
 
-            var verifiyingResult = _client.VerifyTimeStamp(_contentToTest, result.Signature);
+            var verifyingResult = _client.VerifyTimeStamp(_contentToTest, result.Signature);
 
-            Assert.That(verifiyingResult, Is.Not.Null);
-            Assert.That(verifiyingResult.IsSuccess, Is.True);
-            Assert.That(verifiyingResult.ApiResponse, Is.Not.Null);
-            Assert.That(verifiyingResult.Signature, Is.Null);
-            Assert.That(verifiyingResult.TimeStampDateTime.HasValue, Is.False);
+            Assert.That(verifyingResult, Is.Not.Null);
+            Assert.That(verifyingResult.IsSuccess, Is.True);
+            Assert.That(verifyingResult.ApiResponse, Is.Not.Null);
+            Assert.That(verifyingResult.Signature, Is.Null);
+            Assert.That(verifyingResult.TimeStampDateTime.HasValue, Is.False);
             Assert.That(result.TimeStampExpirationDateTime.HasValue, Is.False);
 
         }

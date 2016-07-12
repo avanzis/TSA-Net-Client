@@ -32,38 +32,33 @@ namespace Tests.Providers.Helpers
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void EncodeTo64_Null_String_Throws_Exception()
         {
-            HashHelper.EncodeTo64((string)null);
+            Assert.Throws<ArgumentNullException>(() => HashHelper.EncodeTo64((string)null));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void EncodeTo64_Empty_String_Throws_Exception()
         {
-            HashHelper.EncodeTo64(string.Empty);
+            Assert.Throws<ArgumentNullException>(() => HashHelper.EncodeTo64(string.Empty));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void EncodeTo64_Null_Bytes_Throws_Exception()
         {
-            HashHelper.EncodeTo64((byte[])null);
+            Assert.Throws<ArgumentNullException>(() => HashHelper.EncodeTo64((byte[])null));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void DecodeFrom64_Null_String_Throws_Exception()
         {
-            HashHelper.DecodeFrom64((string)null);
+            Assert.Throws<ArgumentNullException>(() => HashHelper.DecodeFrom64((string)null));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void DecodeFrom64_Empty_String_Throws_Exception()
         {
-            HashHelper.DecodeFrom64(string.Empty);
+            Assert.Throws<ArgumentNullException>(() => HashHelper.DecodeFrom64(string.Empty));
         }
 
         [Test]
@@ -94,17 +89,15 @@ namespace Tests.Providers.Helpers
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void StrToByteArray_Null_String_Throws_Exception()
         {
-            HashHelper.StrToByteArray(null);
+            Assert.Throws<ArgumentNullException>(() => HashHelper.StrToByteArray(null));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void StrToByteArray_Empty_String_Throws_Exception()
         {
-            HashHelper.StrToByteArray(string.Empty);
+            Assert.Throws<ArgumentNullException>(() => HashHelper.StrToByteArray(string.Empty));
         }
 
         [Test]
@@ -118,10 +111,9 @@ namespace Tests.Providers.Helpers
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void ByteArrayToStr_Null_Bytes_Throws_Exception()
         {
-            HashHelper.ByteArrayToStr(null);
+            Assert.Throws<ArgumentNullException>(() => HashHelper.ByteArrayToStr(null));
         }
 
         [Test]
@@ -134,21 +126,19 @@ namespace Tests.Providers.Helpers
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void HashString_Null_String_Throws_Exception()
         {
-            HashHelper.HashString(null);
+            Assert.Throws<ArgumentNullException>(() => HashHelper.HashString(null));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void HashString_Empty_String_Throws_Exception()
         {
-            HashHelper.HashString(string.Empty);
+            Assert.Throws<ArgumentNullException>(() => HashHelper.HashString(string.Empty));
         }
 
         [Test]
-        public void HashString_Returs_Hash_Of_String()
+        public void HashString_Returns_Hash_Of_String()
         {
             var result = HashHelper.HashString(_textToTest);
 
