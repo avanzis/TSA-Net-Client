@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSA-Net-Client", "TSA-Net-Client.csproj", "{61A180C4-6F0A-480F-943F-71399F1DFBFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSA-Net-Client", "TSA-Net-Client\TSA-Net-Client.csproj", "{61A180C4-6F0A-480F-943F-71399F1DFBFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "..\Tests\Tests.csproj", "{0D308B56-D0AB-4F01-86C8-D58707681546}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{0D308B56-D0AB-4F01-86C8-D58707681546}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
