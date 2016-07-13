@@ -1,26 +1,31 @@
-.NET DSS Client for Tractis Time Stamping Authority 
+.NET DSS Client for Tractis Time Stamping Authority
+===================================================
 
 Explanation
---------
+-----------
+
 TimeStampService offers two methods:
+
 - GenerateTimeStamp: Generates a TimeStamp signature of a concrete text.
 - VerifyTimeStamp: Checks the TimeStamp signature and content validity.
 
 Usage
---------
-First of all you need to set the Tractis ApiKey info in TSA_Net_Client.Providers.Tractis.TractisDssClientProperties.cs
+-----
 
-Then you can use the Test Project and launch 
-Tests.Integration.TractisDssClientIntegrationTests.GenerateTimeStamp_Generates_New_TimeStamp_And_Verify_It()
-to test all whole cicle.
+First of all you need to set the Tractis ApiKey info in `TSANetClient.Providers.Tractis.TractisDssClientProperties.cs`.
+
+Then you can use the Test Project and launch
+`Tests.Integration.TractisDssClientIntegrationTests.GenerateTimeStamp_Generates_New_TimeStamp_And_Verify_It()`
+to test all whole cycle.
 
 Licensing
 ---------
+
 All the code in this project has been licensed under MIT license model. Referenced libraries are limited by the licensing schema determined by their respective creators.
 
 Here we provide a copy of the MIT License that applies to the whole project source code and documentation.
 
-Copyright (c) 2012 Avanzis
+Copyright (c) 2012-2016 Avanzis
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -39,4 +44,3 @@ Copyright (c) 2012 Avanzis
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
-
