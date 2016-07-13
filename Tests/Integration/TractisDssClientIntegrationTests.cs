@@ -12,7 +12,7 @@ namespace Tests.Integration
         [SetUp]
         public void SetUp()
         {
-            _client = new TractisDssClient();
+            _client = new TractisDssClient("username", "password");
             _contentToTest = "text to be timestamped";
         }
 
@@ -36,8 +36,6 @@ namespace Tests.Integration
             Assert.That(verifyingResult.ApiResponse, Is.Not.Null);
             Assert.That(verifyingResult.Signature, Is.Null);
             Assert.That(verifyingResult.TimeStampDateTime.HasValue, Is.False);
-            Assert.That(result.TimeStampExpirationDateTime.HasValue, Is.False);
-
         }
     }
 }

@@ -3,8 +3,11 @@
     public class TractisDssClientProperties
     {
         public string ApiTimeStampUrl { get; set; }
+
         public string ApiVerifyUrl { get; set; }
+
         public string ApiUserName { get; set; }
+
         public string ApiPassword { get; set; }
 
         public TractisDssClientProperties()

@@ -12,22 +12,7 @@ namespace Tests.Providers.Tractis
         [SetUp]
         public void SetUp()
         {
-            _client = new TractisDssClient();
-        }
-
-        [Test]
-        public void TractisDssClient_Overwrite_Properties_Overwrites_Properties()
-        {
-            var overwritedProperties = new TractisDssClientProperties();
-            overwritedProperties.ApiPassword = "test";
-            overwritedProperties.ApiTimeStampUrl = "url";
-            overwritedProperties.ApiUserName = "test";
-
-            _client.TractisDssClientProperties = overwritedProperties;
-
-            Assert.That(_client.TractisDssClientProperties.ApiPassword, Is.EqualTo(overwritedProperties.ApiPassword));
-            Assert.That(_client.TractisDssClientProperties.ApiTimeStampUrl, Is.EqualTo(overwritedProperties.ApiTimeStampUrl));
-            Assert.That(_client.TractisDssClientProperties.ApiUserName, Is.EqualTo(overwritedProperties.ApiUserName));
+            _client = new TractisDssClient("foo", "bar");
         }
 
         [Test]

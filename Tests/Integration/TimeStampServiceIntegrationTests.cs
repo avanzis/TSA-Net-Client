@@ -16,7 +16,7 @@ namespace Tests.Integration
         [SetUp]
         public void SetUp()
         {
-            _timeStampProviderClient = new TractisDssClient();
+            _timeStampProviderClient = new TractisDssClient("username", "password");
             _timeStampService = new TimeStampService(_timeStampProviderClient);
             _content = "anything";
             _timestampSignature = "incorrect signature";

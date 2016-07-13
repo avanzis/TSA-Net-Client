@@ -15,11 +15,10 @@ namespace TSA_Net_Client.Services
 
         public TimeStampResult GenerateTimeStamp(string content)
         {
-            if (string.IsNullOrEmpty(content))
-            {
-                throw new ArgumentNullException("content");
-            }
-            TimeStampResult result = new TimeStampResult { IsSuccess = false };
+            if (string.IsNullOrEmpty(content)) throw new ArgumentNullException(nameof(content));
+
+            var result = new TimeStampResult { IsSuccess = false };
+
             var apiResult = _timeStampClient.GenerateTimeStamp(content);
 
             if (apiResult.IsSuccess)
@@ -37,16 +36,10 @@ namespace TSA_Net_Client.Services
 
         public TimeStampResult VerifyTimeStamp(string content, string signature)
         {
-            if (string.IsNullOrEmpty(content))
-            {
-                throw new ArgumentNullException("content");
-            }
-            if (string.IsNullOrEmpty(signature))
-            {
-                throw new ArgumentNullException("signature");
-            }
+            if (string.IsNullOrEmpty(content)) throw new ArgumentNullException(nameof(content));
+            if (string.IsNullOrEmpty(signature)) throw new ArgumentNullException(nameof(signature));
 
-            TimeStampResult result = new TimeStampResult { IsSuccess = false };
+            var result = new TimeStampResult { IsSuccess = false };
             var apiResult = _timeStampClient.VerifyTimeStamp(content, signature);
 
             if (apiResult.IsSuccess)
